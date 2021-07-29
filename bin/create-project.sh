@@ -29,7 +29,7 @@ case "$1" in
         else
             execInDir "$CODE_DIR" "docker run --rm --env COMPOSER_CACHE_DIR=/tmp --user $(id -u):$(id -g) -v \$(pwd):/app composer create-project typo3/cms-base-distribution /app $2"
         fi
-        execInDir "$CODE_DIR" "touch web/FIRST_INSTALL"
+        touch "$CODE_DIR/public/FIRST_INSTALL"
         ;;
 
     ###################################
